@@ -181,7 +181,7 @@ button {
     margin-bottom: 30px;
 }
 
-/*div whereto comprend la section 2 ET l'aside*/
+/*div whereto comprend la section 2 ET l'article*/
 #whereto {
     display: flex;
     flex-direction: row;
@@ -288,14 +288,13 @@ button {
 }
 
 
-/*****aside topofthetop*****/
+/*****article topofthetop*****/
 
 #topofthetop {
     width: 410px; 
     height: 690px;
     display: flex;
     flex-direction: column;
-    margin: auto;
 }
 
 #increase {
@@ -324,13 +323,13 @@ button {
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 20px;
-    width: 80%;
+    width: 340px;
     height: 140px;
     border: 5px solid #FFFFFF;
     background-color: #FFFFFF;
-    margin-left: 35px;
-    margin-bottom: 30px;
+    margin-left: 30px;
     margin-top: 30px;
+    margin-bottom:20px;
 }
 
 .bests a {
@@ -373,7 +372,7 @@ button {
 #section3 {
     display: flex;
     flex-direction: column;
-    width:1370px;
+    width: 1350px;
     height: 550px;
 }
 
