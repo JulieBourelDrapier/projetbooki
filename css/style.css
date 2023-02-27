@@ -39,7 +39,7 @@ i { /*ici je veux inclure toutes les icones <i>*/
 
 /*header*/
 header {
-    width: 1300px;
+    max-width: 1300px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -186,8 +186,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 1300px;
-    height: 700px
+    max-width: 1300px;
 }
 
 #accomodations, #topofthetop {
@@ -209,8 +208,7 @@ button {
 #accomodations {
   display: flex;
   flex-direction: column;
-  width: 800px; /*faut il mettre en % ?????????*/
-  height: 650px;
+  max-width: 800px; /*faut il mettre en % ?????????*/
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
@@ -243,8 +241,7 @@ button {
 }
 
 .card1 { /*ATTENTION les cards doivent être cliquables dans leur intégralité */
-    width: 29%;
-    height: 199px;
+    width: 27%;
     display: flex;
     flex-direction: column;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
@@ -284,15 +281,13 @@ button {
 .stars {
     font-size: 0.8em;
     margin-left: 8px;
-
 }
 
 
 /*****article topofthetop*****/
 
 #topofthetop {
-    width: 410px; 
-    height: 690px;
+    max-width: 410px; 
     display: flex;
     flex-direction: column;
 }
@@ -305,7 +300,7 @@ button {
 }
 
 #increase h1 {
-    padding-left: 38px;
+    margin-left: 35px;
 }
 
 #increase i {
@@ -315,28 +310,24 @@ button {
 #bests {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .card2 { /*ATTENTION les cards doivent être cliquables*/
+    width: 80%;
     display: flex;
     flex-direction: row;
+    border: 5px solid #FFFFFF;
+    background-color: #FFFFFF;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 20px;
-    width: 340px;
-    height: 140px;
-    border: 5px solid #FFFFFF;
-    background-color: #FFFFFF;
-    margin-left: 30px;
-    margin-top: 30px;
-    margin-bottom:20px;
+    margin: 30px;
 }
 
 .bests a {
     text-decoration: none;
     color: black;
-    display: flex;
-    flex-direction: row;
 }
 
 .comment h3 {
@@ -351,7 +342,7 @@ button {
 .card2 img { 
     border-radius:  20px 0px 0px 20px;
     object-fit: cover;
-    width: 38%;
+    width: 40%;
     height: 140px;
 }
 
@@ -372,27 +363,26 @@ button {
 #section3 {
     display: flex;
     flex-direction: column;
-    width: 1350px;
-    height: 550px;
+    max-width: 1350px;
 }
 
 #section3 h1{
     margin-top: 50px;
     margin-bottom: 30px;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 #activities {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    gap: 40px;
+    margin-left: 50px;
     }
 
 .card3 { /*ATTENTION les cards doivent être cliquables*/
     display: flex;
     flex-direction: column;
-    width: 300px;/*il faut trouver un moyen de le mettre en %*/
-    height: 410px;
+    width: 22%;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 20px;
@@ -404,16 +394,13 @@ button {
     border-radius: 20px 20px 0 0;
     
 }
+
 #activities a {
     text-decoration: none;
     color: black;
 }
 
-#section3 h1{
-    margin-top: 50px;
-    margin-bottom: 30px;
-    margin-left: 20px;
-}
+
 .card3 h3 {
     font-size: 0.9em;
     margin-top: 10px;
@@ -431,16 +418,17 @@ footer {
     display: flex;
     flex-direction: row;
     background-color: #F2F2F2;
-    padding-top: 20px;
-    margin-top: 20px;
-    margin-left: 30px;
-    gap: 120px;
+    padding-top: 40px;
+    margin-top: 60px;
+    margin-left: 50px;
+   
 }
 
 .help {
     display: flex;
     flex-direction: column;
-    margin-left: 70px;
+    padding-left: 70px;
+    margin-right: 90px;
 }
 
 .help h4 {
