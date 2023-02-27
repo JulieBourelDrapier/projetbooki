@@ -409,26 +409,24 @@ button {
 
 
 /*footer*/
-
-footer {
-    max-width: 1350px;
-}
-
 #footer { /*revoir margin et padding*/
+    max-width: 1400px;
     display: flex;
     flex-direction: row;
     background-color: #F2F2F2;
     padding-top: 40px;
+    gap: 15%;
     margin-top: 60px;
     margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 0;
+    
    
 }
 
 .help {
     display: flex;
     flex-direction: column;
-    padding-left: 70px;
-    margin-right: 90px;
 }
 
 .help h4 {
