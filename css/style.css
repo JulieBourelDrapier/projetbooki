@@ -1,7 +1,7 @@
 
 /* dans la synthèse il est précisé que " pour éviter d’étirer la page sur la largeur de façon excessive, il faut déterminer
 une largeur maximum de 1400 px." */
-#conteneur {
+#container {
     max-width: 1400px;
     margin: auto;
 }
@@ -423,8 +423,8 @@ button {
 
 /*footer*/
 
-footer { 
-    width: auto;
+footer {
+    max-width: 1350px;
 }
 
 #footer { /*revoir margin et padding*/
@@ -433,7 +433,7 @@ footer {
     background-color: #F2F2F2;
     padding-top: 20px;
     margin-top: 20px;
-    justify-content: flex-start;
+    margin-left: 30px;
     gap: 120px;
 }
 
@@ -445,8 +445,7 @@ footer {
 
 .help h4 {
     margin-left: 40px;
-    margin-bottom: 5px;
-   
+    margin-bottom: 5px;  
 }
 
 ul {
@@ -456,4 +455,38 @@ ul {
 
 li {
     margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    button {
+       color:deeppink;
+     <i class="fa-solid fa-magnifying-glass"></i>
+    }
+}
+
+/*modification du header*/
+@media screen and (max-width: 768px) {
+    header {
+        max-width: 768px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media  and (max-width: 768px) {
+
+    #logo img {
+        justify-content: center;
+    }
+
+}
+
+
+@media  and (max-width: 768px) {
+
+    # {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
