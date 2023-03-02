@@ -2,7 +2,8 @@
 /* dans la synthèse il est précisé que " pour éviter d’étirer la page sur la largeur de façon excessive, il faut déterminer
 une largeur maximum de 1400 px." */
 #container {
-    max-width: 1400px;
+    max-width: 1440px;
+    min-width: 320px;
     margin: auto;
 }
 
@@ -118,7 +119,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 /*correspond à "Rechercher".
  Attention, en version mobile il faut mettre une icone loupe 
 <i class="fa-solid fa-magnifying-glass"></i> à la place du texte "Rechercher"*/
-button {
+.buttonresearch {
     background-color:#0065FC;
     color: white;
     font-weight: bold;
@@ -135,7 +136,7 @@ button {
 #filtres {
         display: flex;
         flex-direction: row;
-        width: 1000px;
+        max-width: 1000px;
 }
 
 .filtre a { /* ATTENTION, les filtres éco, fam, rom, animaux doivent changer d'apparence au survol utiliser du bleu clair (#DEEBFF) */
@@ -145,10 +146,9 @@ button {
     border-radius: 25px;
     padding-top: 10px;
     padding-left: 18px;
-    padding-right: 30px;
+    padding-right: 20px;
     padding-bottom: 10px;
-    justify-content: space-between;
-    margin: 20px;
+    margin: 13px;
     text-decoration: none;
     font-weight: bold;
     color: black;
@@ -343,7 +343,7 @@ button {
     border-radius:  20px 0px 0px 20px;
     object-fit: cover;
     width: 40%;
-    height: 140px;
+    min-height: 140px;
 }
 
 .box2 {
@@ -444,35 +444,164 @@ li {
 }
 
 
-@media screen and (max-width: 768px) {
-    button {
-       color:deeppink;
-     <i class="fa-solid fa-magnifying-glass"></i>
-    }
+
+
+.hide-lg {
+    visibility: hidden;
 }
 
-/*modification du header*/
-@media screen and (max-width: 768px) {
+
+
+/*********************************************MEDIA QUERIES****************************************/
+
+/*media queries en lien avec la version tablette (768 à 1024px selon la nouvelle version de booki)*/
+@media screen and (min-width: 769px) and (max-width: 1024px){
+
+
+
+}
+
+
+
+
+
+/*********************************************MEDIA QUERIES****************************************/
+
+/*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
+@media screen and (max-width: 768px) { 
     header {
-        max-width: 768px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    a:hover { /*au dessus version desktop, en dessous version mobile*/
+    color: #0065FC;
+    text-decoration: underline solid 2px;
+    }
+    
+    #section1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    }
+
+    #section3 {
+        align-items: center;
+    }
+
+    form { /*correspond aux éléments qui forment la barre de recherche*/
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #F2F2F2;
+    border-radius: 15px;
+    align-items: center;
+    max-width: 70%; /*permet de définir la largeur de la barre de recherche. Je me suis basée sur la maquette où la fin de la barre arrive à peu près au niveau de "vac"*/
+    }
+
+    /*loupe au lieu de recherche, changement de place topofthetop et accomodations*/
+    .hide-md { 
+        display: none;
+    }
+
+    .hide-lg { /*class qui permet de cacher certaines choses en fonction de la taille de l'écran*/
+        visibility: hidden;
+    }
+
+
+
+    /*partie filtres*/
+    #filtres {
         display: flex;
         flex-direction: column;
     }
-}
-@media  and (max-width: 768px) {
 
-    #logo img {
-        justify-content: center;
+    .filtre {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-}
+    .filtre a {
+        min-width: 140px;
+        justify-content: center;   
+    }   
 
 
-@media  and (max-width: 768px) {
 
-    # {
+    /*en version mobile la section 2 passe après l'article*/
+
+    #whereto {
         display: flex;
         flex-direction: column;
     }
+
+    .two {
+        order: 1;
+        flex: 1;
+    }
+
+    .one {
+        order: 2;
+    }
+
+    .card2 img { 
+    object-fit: cover;
+    width: 30%;
+    }
+
+    
+    #accomodations {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    margin: 0;
+    padding: 0;
+    }
+
+    #accomodations h2 {
+        display: none;
+    }
+
+    #where { 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card1 { 
+        width: 97%;
+    }
+
+    .card1 img { 
+        object-fit: cover;
+        width: 100%;
+    }
+    
+
+    /*****section 3 activities*****/
+    #activities {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    }
+
+    .card3 { /*ATTENTION les cards doivent être cliquables*/
+    width: 97%;
+    }
+
+    .card3 img {
+    width: 100%;
+    max-width:334px;
+    }
+
+    /*footer*/
+    #footer { /*revoir margin et padding*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    margin: 0;
+    }
+
 
 }
