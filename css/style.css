@@ -144,10 +144,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     flex-direction: row;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
-    padding-top: 10px;
-    padding-left: 18px;
-    padding-right: 20px;
-    padding-bottom: 10px;
+    padding: 10px;
     margin: 13px;
     text-decoration: none;
     font-weight: bold;
@@ -296,7 +293,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     display: flex;
     flex-direction: row;
     padding-top : 40px;
-    gap: 90px;
+    gap: 18%;
 }
 
 #increase h1 {
@@ -343,7 +340,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     border-radius:  20px 0px 0px 20px;
     object-fit: cover;
     width: 40%;
-    min-height: 140px;
+    height: 140px;
 }
 
 .box2 {
@@ -447,7 +444,7 @@ li {
 
 
 .hide-lg {
-    visibility: hidden;
+   display: none;
 }
 
 
@@ -474,6 +471,15 @@ li {
         flex-direction: column;
         align-items: center; 
     }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 30px;
+        padding: 0;
+    }
+    
 
     a:hover { /*au dessus version desktop, en dessous version mobile*/
     color: #0065FC;
@@ -505,10 +511,12 @@ li {
     }
 
     .hide-lg { /*class qui permet de cacher certaines choses en fonction de la taille de l'écran*/
-        visibility: hidden;
+        display: contents;
     }
 
-
+    input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
+        padding : 0;
+        }
 
     /*partie filtres*/
     #filtres {
@@ -551,7 +559,14 @@ li {
     width: 30%;
     }
 
-    
+    #where { 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
     #accomodations {
     display: flex;
     flex-direction: column;
@@ -559,14 +574,17 @@ li {
     margin: 0;
     padding: 0;
     }
+    
+    #topofthetop {
+    border-radius: 0;
+    }
+
+    #accomodations h1 {
+        margin-top: 35px;
+    }
 
     #accomodations h2 {
         display: none;
-    }
-
-    #where { 
-        display: flex;
-        flex-direction: column;
     }
 
     .card1 { 
@@ -584,7 +602,10 @@ li {
     display: flex;
     flex-direction: column;
     margin-left: 0;
+    gap: 15px;
+    margin-bottom: 65px;
     }
+    
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
     width: 97%;
@@ -595,12 +616,13 @@ li {
     max-width:334px;
     }
 
-    /*footer*/
+    /*footer*/  
     #footer { /*revoir margin et padding*/
     width: 100%;
     display: flex;
     flex-direction: column;  
     margin: 0;
+    padding-left: 0;
     }
 
 
