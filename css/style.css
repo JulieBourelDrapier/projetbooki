@@ -139,13 +139,18 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
         max-width: 1000px;
 }
 
+.conteneur{
+    display: flex;
+    flex-direction: row;
+}
+
 .filtre a { /* ATTENTION, les filtres éco, fam, rom, animaux doivent changer d'apparence au survol utiliser du bleu clair (#DEEBFF) */
     display: flex;
     flex-direction: row;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
     padding: 10px;
-    margin: 13px;
+    margin: 20px;
     text-decoration: none;
     font-weight: bold;
     color: black;
@@ -465,6 +470,8 @@ li {
 /*********************************************MEDIA QUERIES****************************************/
 
 /*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
+
+    /*HEADER*/
 @media screen and (max-width: 768px) { 
     header {
         display: flex;
@@ -472,6 +479,12 @@ li {
         align-items: center; 
     }
 
+    /*LOGO*/
+    #logo img {
+        padding-left: 0;
+    }
+
+    /* NAV AVEC HBRGMNT ET ACTIVITIES */
     nav {
         display: flex;
         flex-direction: row;
@@ -480,32 +493,52 @@ li {
         padding: 0;
     }
     
-
-    a:hover { /*au dessus version desktop, en dessous version mobile*/
+    /* SOULIGNAGE DU NAV */
+    a:hover { /* il est en DESSOUS en version mobile*/
     color: #0065FC;
     text-decoration: underline solid 2px;
     }
-    
+
+    /* SECTION 1 ET BARRE DE RECHERCHE */
+
     #section1 {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    }
+        margin: auto;
+        }
 
-    #section3 {
+    form { /*Eléments qui forment la barre de recherche dans la version mobile*/
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
         align-items: center;
-    }
+        }
 
-    form { /*correspond aux éléments qui forment la barre de recherche*/
+    #dotlocation { /*contour de l'icone dotlocation*/
+        padding: 15px;
+    }
+    
+    input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
+        border: none;
+        font-size: 1.1em;
+        width: 180px;
+        font-weight: bold;
+        padding : 15px;
+        }
+
+    form { /*correspond aux éléments qui forment la barre de recherche dans la version mobile*/
     display: flex;
     flex-direction: row;
-    border: 1px solid #F2F2F2;
-    border-radius: 15px;
+    margin-bottom: 20px;
     align-items: center;
-    max-width: 70%; /*permet de définir la largeur de la barre de recherche. Je me suis basée sur la maquette où la fin de la barre arrive à peu près au niveau de "vac"*/
     }
 
-    /*loupe au lieu de recherche, changement de place topofthetop et accomodations*/
+    .buttonresearch i { /*icone loupe (couleur blanche, fond bleu, radius différent sur mobile ainsi que padding)*/
+        color: white;
+        background-color: #0065FC;
+        border-radius: 0 15px 15px 0;
+        padding: 16px;
+    }
+    
+    /*icone LOUPE à la place de "Recherche" + changement de place topofthetop et accomodations (ordre inversé one/two)*/
     .hide-md { 
         display: none;
     }
@@ -514,28 +547,31 @@ li {
         display: contents;
     }
 
-    input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
-        padding : 0;
-        }
-
-    /*partie filtres*/
+    /* PARTIE FILTRES */
     #filtres {
         display: flex;
         flex-direction: column;
     }
 
     .filtre {
-        margin: auto;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        font-size: 0.7em;
+        align-items: center;
     }
 
-    .filtre a {
-        min-width: 140px;
-        justify-content: center;   
-    }   
+    .conteneur { /*DIV qui réuni l'ensemble des filtres et qui va pouvoir être agencée grace à CSS GRIDS*/
+        display: grid;
+        grid-template-columns: 180px 180px;
+        grid-template-rows: 40px 40px;
+        margin-bottom: 15px;
+    }
 
+    
+
+    #section3 {
+        align-items: center;
+    }
 
 
     /*en version mobile la section 2 passe après l'article*/
