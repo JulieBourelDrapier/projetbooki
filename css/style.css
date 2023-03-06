@@ -70,9 +70,9 @@ nav a {
     padding-top: 44px;
 }
 
-a:hover { /*ligne de survol, au dessus en version desktop, en dessous en version mobile*/
-    color: #0065FC;
+nav a:hover { /*ligne de survol, au dessus en version desktop, en dessous en version mobile*/
     border-top: 2px solid #0065FC;
+    color: #0065FC;
 }
 
 
