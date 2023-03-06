@@ -60,7 +60,6 @@ nav {
     flex-direction: row;
     justify-content: flex-end;
     gap: 50px;
-    padding-top: 44px;
     padding-right: 40px;
 }
 
@@ -68,13 +67,12 @@ nav {
 nav a {
     color: black;
     text-decoration: none;  
+    padding-top: 44px;
 }
 
-a:hover {
+a:hover { /*ligne de survol, au dessus en version desktop, en dessous en version mobile*/
     color: #0065FC;
-    text-decoration: overline 2px;    
-    /*au dessus version desktop, en dessous version mobile, 
-    il faudra ajouter des infos selon taille d'écran*/
+    border-top: 2px solid #0065FC;
 }
 
 
@@ -459,7 +457,29 @@ li {
 /*media queries en lien avec la version tablette (768 à 1024px selon la nouvelle version de booki)*/
 @media screen and (min-width: 769px) and (max-width: 1024px){
 
+    #whereto {
+        display: flex;
+        flex-direction: column;
+        gap:50px;
+    }
 
+    #accomodations {
+        max-width: 1024px;
+    }
+    
+    #topofthetop {
+        max-width: 1024px; 
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-left: 50px;
+        margin-right: 40px;
+      }
+    
+
+    .bests {
+        display: flex;
+        flex-direction: row;
+    }
 
 }
 
@@ -496,7 +516,8 @@ li {
     /* SOULIGNAGE DU NAV */
     a:hover { /* il est en DESSOUS en version mobile*/
     color: #0065FC;
-    text-decoration: underline solid 2px;
+    /*text-decoration: underline solid 2px;*/
+    border-bottom: 2px solid #0065FC;
     }
 
     /* SECTION 1 ET BARRE DE RECHERCHE */
@@ -562,17 +583,10 @@ li {
 
     .conteneur { /*DIV qui réuni l'ensemble des filtres et qui va pouvoir être agencée grace à CSS GRIDS*/
         display: grid;
-        grid-template-columns: 180px 180px;
-        grid-template-rows: 40px 40px;
+        grid-template-columns: 190px 190px;
+        grid-template-rows: 50px 50px;
         margin-bottom: 15px;
     }
-
-    
-
-    #section3 {
-        align-items: center;
-    }
-
 
     /*en version mobile la section 2 passe après l'article*/
 
@@ -634,6 +648,10 @@ li {
     
 
     /*****section 3 activities*****/
+    #section3 {
+        align-items: center;
+    }
+
     #activities {
     display: flex;
     flex-direction: column;
