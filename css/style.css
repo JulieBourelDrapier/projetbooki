@@ -624,15 +624,20 @@ li {
     #accomodations {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    min-width: 375px;
     background: white;
-    max-width: 80%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     }
 
-
     #topofthetop {
     border-radius: 0;
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 375px;
+
     }
 
     #accomodations h1 {
@@ -662,10 +667,16 @@ li {
     display: flex;
     flex-direction: column;
     margin-left: 0;
+    margin: 0 auto;
+    max-width: 500px;
+    min-width: 320px;
     gap: 15px;
     margin-bottom: 65px;
     }
     
+    #section3 h1 {
+    margin-left: -50px ;
+    }
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
     width: 97%;
