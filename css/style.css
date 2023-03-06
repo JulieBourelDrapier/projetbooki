@@ -92,7 +92,7 @@ form { /*correspond aux éléments qui forment la barre de recherche*/
     border-radius: 15px;
     margin-top: 30px; /*influence l'espace entre le p "En plein centre" et la barre de recherche*/
     margin-bottom: 40px; /*influence l'espace entre la barre et les filtres*/
-    width: 418px; /*permet de définir la largeur de la barre de recherche. Je me suis basée sur la maquette où la fin de la barre arrive à peu près au niveau de "vac"*/
+    width: 35%; /*permet de définir la largeur de la barre de recherche. Je me suis basée sur la maquette où la fin de la barre arrive à peu près au niveau de "vac"*/
 }
 
 #dotlocation i { /*ici l'icone est noire*/
@@ -581,6 +581,10 @@ li {
         align-items: center;
     }
 
+    .filtre a {
+        width: 80%;
+    }
+
     .conteneur { /*DIV qui réuni l'ensemble des filtres et qui va pouvoir être agencée grace à CSS GRIDS*/
         display: grid;
         grid-template-columns: 190px 190px;
@@ -621,10 +625,12 @@ li {
     display: flex;
     flex-direction: column;
     background: white;
+    max-width: 80%;
     margin: 0;
     padding: 0;
     }
-    
+
+
     #topofthetop {
     border-radius: 0;
     }
