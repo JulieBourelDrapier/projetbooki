@@ -454,8 +454,8 @@ li {
 
 /*********************************************MEDIA QUERIES****************************************/
 
-/*media queries en lien avec la version tablette (768 à 1024px selon la nouvelle version de booki)*/
-@media screen and (min-width: 769px) and (max-width: 1024px){
+/*media queries en lien avec la version tablette (769 à 992px selon l'ancienne version de booki)*/
+@media screen and (min-width: 769px) and (max-width: 992px){
 
     #whereto {
         display: flex;
@@ -464,23 +464,54 @@ li {
     }
 
     #accomodations {
-        max-width: 1024px;
+        width: 80%;
+        max-width: 900px;
+        min-width: 650px; 
+        
     }
     
     #topofthetop {
-        max-width: 1024px; 
-        padding-left: 40px;
-        padding-right: 40px;
+        width: 80%;
+        max-width: 900px;
+        min-width: 760px; 
         margin-left: 50px;
-        margin-right: 40px;
       }
     
+    #increase {
+        display: flex;
+        flex-direction: row;
+        padding-top : 40px;
+        gap: 60%;
+    }
 
     .bests {
         display: flex;
         flex-direction: row;
     }
 
+    .card2 {
+        width: 30%;
+        max-width: 250px;
+        min-width: 150px;
+    }
+
+    #activities {
+    margin: 50 auto;
+    width: 100%;
+    max-width: 900px;
+    min-width: 650px;
+    }
+
+    #activities h1 {
+        margin-left: 30px;
+        margin-top: 55px;
+    }
+
+    #footer {
+        width: 100%;
+        max-width: 900px;
+        min-width: 650px;
+    }
 }
 
 
@@ -625,8 +656,8 @@ li {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 500px;
-    min-width: 375px;
+    max-width: 375px;
+    min-width: 333px;
     background: white;
     margin: 0 auto;
     padding: 0;
@@ -635,8 +666,8 @@ li {
     #topofthetop {
     border-radius: 0;
     margin: 0 auto;
-    max-width: 500px;
-    min-width: 375px;
+    max-width: 375px;
+    min-width: 333px;
 
     }
 
@@ -675,7 +706,7 @@ li {
     }
     
     #section3 h1 {
-    margin-left: -50px ;
+
     }
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
@@ -684,7 +715,6 @@ li {
 
     .card3 img {
     width: 100%;
-    max-width:334px;
     }
 
     /*footer*/  
