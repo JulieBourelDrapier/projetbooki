@@ -563,6 +563,7 @@ li {
     /****** SECTION1 ET BARRE DE RECHERCHE  ****************/
     #section1 {
         margin: auto;
+        align-items: center;
         }
 
     form { /*Eléments qui forment la barre de recherche dans la version mobile*/
@@ -622,11 +623,12 @@ li {
 
     .filtre a {
         width: 80%;
+        margin: 0;
     }
 
     .conteneur { /*DIV qui réuni l'ensemble des filtres et qui va pouvoir être agencée grace à CSS GRIDS*/
         display: grid;
-        grid-template-columns: 190px 190px;
+        grid-template-columns: 10em 10em;
         grid-template-rows: 50px 50px;
         margin-bottom: 15px;
     }
@@ -640,6 +642,7 @@ li {
     #whereto {
         display: flex;
         flex-direction: column;
+        min-width: 300px;
     }
 
      /************************ARTICLE QUI PASSE AVANT LA SECTION2**************************/
@@ -656,7 +659,7 @@ li {
         border-radius: 0;
         margin: 0 auto;
         max-width: 375px;
-        min-width: 320px;
+        min-width: 300px;
         padding-bottom: 30px;
         }
 
@@ -733,8 +736,10 @@ li {
     }
     
     #section3 h1 {
-    margin: auto;
+        width: 110px;
+        margin-right: 250px;
     }
+    
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
     width: 97%;
@@ -751,6 +756,7 @@ li {
     /*footer*/  
     #footer { /*revoir margin et padding*/
     width: 100%;
+    min-width: 300px;
     display: flex;
     flex-direction: column;  
     margin: 0;
