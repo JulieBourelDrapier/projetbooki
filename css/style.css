@@ -14,7 +14,7 @@ body {
 
 h1 {
     color: black;
-    font-size: 1.4em; /*en em*/
+    font-size: 1.4em;
     margin: 6px;
 }
 
@@ -186,7 +186,8 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 1300px;
+    max-width: 1345px;
+    margin-bottom: 60px;
 }
 
 #accomodations, #topofthetop {
@@ -322,7 +323,8 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 20px;
-    margin: 30px;
+    margin: 35px;
+    margin-bottom: 38px;
 }
 
 .bests a {
@@ -363,13 +365,13 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 #section3 {
     display: flex;
     flex-direction: column;
-    max-width: 1350px;
+    max-width: 1400px;
 }
 
-#section3 h1{
-    margin-top: 50px;
-    margin-bottom: 30px;
-    margin-left: 50px;
+#section3 h1 {
+    padding-bottom: 20px;
+    margin-left: 60px;
+   
 }
 
 #activities {
@@ -410,7 +412,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 
 /*footer*/
 #footer { /*revoir margin et padding*/
-    max-width: 1400px;
+    max-width: 1300px;
     display: flex;
     flex-direction: row;
     background-color: #F2F2F2;
@@ -418,7 +420,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     gap: 15%;
     margin-top: 60px;
     margin-left: 50px;
-    margin-right: 50px;
+    margin-right: 40px;
     margin-bottom: 0;
     
    
@@ -471,10 +473,11 @@ li {
     }
     
     #topofthetop {
-        width: 80%;
+        width: 90%;
         max-width: 900px;
-        min-width: 760px; 
-        margin-left: 50px;
+        min-width: 792px; 
+        margin: auto;
+        /*margin-left: 50px;*/
       }
     
     #increase {
@@ -490,27 +493,32 @@ li {
     }
 
     .card2 {
-        width: 30%;
+        width: 90%;
+        height: 145px;
         max-width: 250px;
         min-width: 150px;
     }
 
     #activities {
-    margin: 50 auto;
+    margin: 50px auto;
     width: 100%;
     max-width: 900px;
     min-width: 650px;
     }
 
     #activities h1 {
-        margin-left: 30px;
-        margin-top: 55px;
+    margin-left: 30px;
+    margin-top: 55px;
+    }
+
+    #section3 h1 {
+    margin: 0;
     }
 
     #footer {
-        width: 100%;
-        max-width: 900px;
-        min-width: 650px;
+    width: 100%;
+    max-width: 900px;
+    min-width: 650px;
     }
 }
 
@@ -518,41 +526,41 @@ li {
 
 
 
-/*********************************************MEDIA QUERIES****************************************/
+/***********************************  MEDIA QUERIES MOBILE  *************************/
 
 /*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
 
-    /*HEADER*/
+    /**************** HEADER *********/
 @media screen and (max-width: 768px) { 
     header {
         display: flex;
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
     }
 
-    /*LOGO*/
+    /****** LOGO *****/
     #logo img {
         padding-left: 0;
     }
 
-    /* NAV AVEC HBRGMNT ET ACTIVITIES */
+    /****** NAV *******/
     nav {
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
-        gap: 30px;
-        padding: 0;
     }
     
+    nav a {
+        padding-bottom: 20px;
+    }
+
     /* SOULIGNAGE DU NAV */
-    a:hover { /* il est en DESSOUS en version mobile*/
+    nav a:hover { /* il est en DESSOUS en version mobile*/
     color: #0065FC;
-    /*text-decoration: underline solid 2px;*/
+    border-top: none;
     border-bottom: 2px solid #0065FC;
     }
 
-    /* SECTION 1 ET BARRE DE RECHERCHE */
-
+    /****** SECTION1 ET BARRE DE RECHERCHE  ****************/
     #section1 {
         margin: auto;
         }
@@ -577,10 +585,10 @@ li {
         }
 
     form { /*correspond aux éléments qui forment la barre de recherche dans la version mobile*/
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-    align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        align-items: center;
     }
 
     .buttonresearch i { /*icone loupe (couleur blanche, fond bleu, radius différent sur mobile ainsi que padding)*/
@@ -599,7 +607,7 @@ li {
         display: contents;
     }
 
-    /* PARTIE FILTRES */
+    /****** FILTRES **********/
     #filtres {
         display: flex;
         flex-direction: column;
@@ -623,13 +631,18 @@ li {
         margin-bottom: 15px;
     }
 
-    /*en version mobile la section 2 passe après l'article*/
+    #info {
+        margin-bottom: 20px;
+    }
 
+
+    /* DIV QUI REGROUPE SECTION2 ET ARTICLE */
     #whereto {
         display: flex;
         flex-direction: column;
     }
 
+     /************************ARTICLE QUI PASSE AVANT LA SECTION2**************************/
     .two {
         order: 1;
         flex: 1;
@@ -639,11 +652,29 @@ li {
         order: 2;
     }
 
+     #topofthetop {
+        border-radius: 0;
+        margin: 0 auto;
+        max-width: 375px;
+        min-width: 320px;
+        padding-bottom: 30px;
+        }
+
     .card2 img { 
-    object-fit: cover;
-    width: 30%;
+        object-fit: cover;
+        width: 30%;
     }
 
+    #increase h1 {
+        margin-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    #increase {
+        gap: 22%;
+    }
+
+    /************************SECTION2 ACCOMODATIONS*****************************/
     #where { 
         display: flex;
         flex-direction: column;
@@ -657,22 +688,16 @@ li {
     flex-direction: column;
     width: 100%;
     max-width: 375px;
-    min-width: 333px;
+    min-width: 320px;
     background: white;
     margin: 0 auto;
     padding: 0;
-    }
-
-    #topofthetop {
-    border-radius: 0;
-    margin: 0 auto;
-    max-width: 375px;
-    min-width: 333px;
-
+    justify-content: center;
     }
 
     #accomodations h1 {
         margin-top: 35px;
+        margin-left: 0;
     }
 
     #accomodations h2 {
@@ -681,6 +706,7 @@ li {
 
     .card1 { 
         width: 97%;
+        height: 199px;
     }
 
     .card1 img { 
@@ -689,7 +715,7 @@ li {
     }
     
 
-    /*****section 3 activities*****/
+    /*****************************SECTION3 ACTIVITIES******************************/
     #section3 {
         align-items: center;
     }
@@ -703,18 +729,23 @@ li {
     min-width: 320px;
     gap: 15px;
     margin-bottom: 65px;
+    align-items: center;
     }
     
     #section3 h1 {
-
+    margin: auto;
     }
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
     width: 97%;
+    padding-bottom: 20px;
     }
 
     .card3 img {
     width: 100%;
+    
+    max-width: 320px;
+    max-height: 124px;
     }
 
     /*footer*/  
