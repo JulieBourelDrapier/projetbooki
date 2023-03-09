@@ -190,8 +190,9 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    max-width: 1345px;
+    max-width: 100%;
     margin-bottom: 60px;
+    margin-right: 50px;
 }
 
 #accomodations, #topofthetop {
@@ -210,10 +211,15 @@ button {
 
 /*****section2*****/
 
+.one {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 #accomodations {
   display: flex;
   flex-direction: column;
-  max-width: 800px; /*faut il mettre en % ?????????*/
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
@@ -294,6 +300,12 @@ button {
 
 
 /*****article topofthetop*****/
+
+.two {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 #topofthetop {
     /*max-width: 410px;*/
@@ -479,9 +491,20 @@ li {
     }
 
     #whereto {
-        display: flex;
         flex-direction: column;
         gap:50px;
+    }
+
+    .one {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .two {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
 
     #accomodations {
@@ -668,10 +691,14 @@ li {
     .two {
         order: 1;
         flex: 1;
+        width: 100%;
+        align-items: center;
     }
 
     .one {
         order: 2;
+        width: 100%;
+        align-items: center;
     }
 
      #topofthetop {
