@@ -1,9 +1,9 @@
 
-/* dans la synthèse il est précisé que " pour éviter d’étirer la page sur la largeur de façon excessive, il faut déterminer
-une largeur maximum de 1400 px." */
+/*Largeur min 320px ; Largeur max 1400px*/
 #container {
-    max-width: 1440px;
-    min-width: 320px;
+    /*max-width: 1440px;
+    min-width: 320px;*/
+    max-width: calc(1400px + 2 * var(--body-padding-sides));
     margin: auto;
 }
 
@@ -13,25 +13,19 @@ body {
 }
 
 h1 {
-    color: black;
     font-size: 1.4em;
-    margin: 6px;
 }
 
 h2 {
-    font-size: 1.2em; /*en em*/
-    padding: 15px;
+    font-size: 1.2em;
 }
 
 h3 {
-    font-size: 1em; /*en em*/
-    margin-top: 4px;
-    margin-bottom: 4px;
+    font-size: 1em;
 }
 
 p {
-    font-size: 1em; /*en em*/
-    margin: 10px;
+    font-size: 1em;
 }
 
 i { /*ici je veux inclure toutes les icones <i>*/
@@ -40,9 +34,9 @@ i { /*ici je veux inclure toutes les icones <i>*/
 
 /*header*/
 header {
-    max-width: 1300px;
     display: flex;
-    flex-direction: row;
+    align-items: center; /* Added */
+    /*flex-direction: row;*/ /* Removed */
     justify-content: space-between;
     margin-bottom: 50px;
 }
@@ -74,7 +68,6 @@ nav a:hover { /*ligne de survol, au dessus en version desktop, en dessous en ver
     border-top: 2px solid #0065FC;
     color: #0065FC;
 }
-
 
 /*section 1 : Trouvez votre hbrgmnt*/
 #section1 {
@@ -114,9 +107,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     padding : 20px;
     }
 
-/*correspond à "Rechercher".
- Attention, en version mobile il faut mettre une icone loupe 
-<i class="fa-solid fa-magnifying-glass"></i> à la place du texte "Rechercher"*/
+/*correspond à "Rechercher" */
 .buttonresearch {
     background-color:#0065FC;
     color: white;
@@ -132,36 +123,49 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 
 /*partie filtres*/
 #filtres {
-        display: flex;
-        flex-direction: row;
-        max-width: 1000px;
-}
-
-.conteneur{
     display: flex;
     flex-direction: row;
 }
 
-.filtre a { /* ATTENTION, les filtres éco, fam, rom, animaux doivent changer d'apparence au survol utiliser du bleu clair (#DEEBFF) */
+.conteneur {
+    display: flex;
+    flex-direction: row;
+}
+
+#filtres ul {
+    list-style-type: none;
+}
+
+ .filtre {
     display: flex;
     flex-direction: row;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
     padding: 10px;
     margin: 20px;
-    text-decoration: none;
     font-weight: bold;
+ }
+
+ .filtre a {
+    text-decoration: none;
     color: black;
  }
 
-.filtre a:hover {
+ 
+.filtre a:hover {  /*les filtres doivent changer d'apparence au survol*/
     color: black;
     background-color: #DEEBFF;
     text-decoration: none;
+    border-radius: 25px;
 }
 
 .filtre i {
     padding-right: 10px;
+}
+
+button {
+    background-color: white;
+    font-size: 1.1em;
 }
 
 /*div info (i entouré + indications "plus de 500 logements dispos"*/
@@ -225,12 +229,16 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 #accomodations h2 {
     margin-left: 20px;
     margin-top: 18px;
-    
+    padding: 15px;
 }
 
-#accomodations a{
+#accomodations a {
     text-decoration: none;
     color: black;
+}
+
+#accomodations p {
+    margin: 10px;
 }
 
 #where { 
@@ -288,7 +296,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 /*****article topofthetop*****/
 
 #topofthetop {
-    max-width: 410px; 
+    /*max-width: 410px;*/
     display: flex;
     flex-direction: column;
 }
@@ -391,7 +399,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
 }
 
 .card3 img {
-    width: 100%;/*il faut trouver un moyen de le mettre en %*/
+    width: 100%;
     height: 350px;
     border-radius: 20px 20px 0 0;
     
@@ -436,7 +444,7 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     margin-bottom: 5px;  
 }
 
-ul {
+footer ul {
     list-style-type: none;
     font-size: 0.9em;
 }
@@ -454,10 +462,21 @@ li {
 
 
 
-/*********************************************MEDIA QUERIES****************************************/
+/*********************************************MEDIA QUERIES TABLETTE****************************************/
 
 /*media queries en lien avec la version tablette (769 à 992px selon l'ancienne version de booki)*/
+
 @media screen and (min-width: 769px) and (max-width: 992px){
+    header {
+        align-items: center;
+        width: 100%;
+    }
+
+    #section1 {
+        align-items: center;
+        width: 100%;
+        margin: auto;
+    }
 
     #whereto {
         display: flex;
@@ -469,7 +488,6 @@ li {
         width: 80%;
         max-width: 900px;
         min-width: 650px; 
-        
     }
     
     #topofthetop {
@@ -526,16 +544,16 @@ li {
 
 
 
-/***********************************  MEDIA QUERIES MOBILE  *************************/
+/************************************************  MEDIA QUERIES MOBILE  **************************************/
 
 /*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
 
     /**************** HEADER *********/
 @media screen and (max-width: 768px) { 
     header {
-        display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     /****** LOGO *****/
@@ -564,6 +582,7 @@ li {
     #section1 {
         margin: auto;
         align-items: center;
+        width: 100%;
         }
 
     form { /*Eléments qui forment la barre de recherche dans la version mobile*/
@@ -580,7 +599,7 @@ li {
     input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
         border: none;
         font-size: 1.1em;
-        width: 180px;
+        /*width: 180px;*/
         font-weight: bold;
         padding : 15px;
         }
@@ -658,8 +677,8 @@ li {
      #topofthetop {
         border-radius: 0;
         margin: 0 auto;
-        max-width: 375px;
-        min-width: 300px;
+        /*max-width: 375px;*/
+        /*min-width: 300px;*/
         padding-bottom: 30px;
         }
 
