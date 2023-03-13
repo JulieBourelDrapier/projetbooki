@@ -685,7 +685,6 @@ li {
 
     #filtres li{
         width: 190px;
-        flex-wrap:wrap;
         font-size: 0.8em;
     }
 
@@ -696,6 +695,7 @@ li {
 
     .conteneur { /*gestion des filtres*/
         flex-wrap: wrap;
+        padding-left: 0;
     }
 
     #info {
@@ -705,8 +705,9 @@ li {
 
     /* DIV QUI REGROUPE SECTION2 ET ARTICLE */
     #whereto {
-        display: flex;
+        width: 100%;
         flex-direction: column;
+        align-items: center;
     }
 
      /************************ARTICLE QUI PASSE AVANT LA SECTION2**************************/
@@ -714,13 +715,11 @@ li {
         order: 1;
         flex: 1;
         width: 100%;
-        align-items: center;
     }
 
     .one {
         order: 2;
         width: 100%;
-        align-items: center;
     }
 
      #topofthetop {
