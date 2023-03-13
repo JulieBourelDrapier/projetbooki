@@ -1,8 +1,6 @@
 
-/*Largeur min 320px ; Largeur max 1400px*/
+/* min-width 320px maxi-width 1400 px." */
 #container {
-    /*max-width: 1440px;
-    min-width: 320px;*/
     max-width: calc(1400px + 2 * var(--body-padding-sides));
     margin: auto;
 }
@@ -13,19 +11,25 @@ body {
 }
 
 h1 {
+    color: black;
     font-size: 1.4em;
+    /*margin: 6px; REMOVED*/
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 1.2em; /*en em*/
+    /*padding: 15px; REMOVED*/
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 1em; /*en em*/
+    /*margin-top: 4px; REMOVED*/
+    /*margin-bottom: 4px; REMOVED*/ 
 }
 
 p {
-    font-size: 1em;
+    font-size: 1em; /*en em*/
+    margin: 10px;
 }
 
 i { /*ici je veux inclure toutes les icones <i>*/
@@ -34,27 +38,26 @@ i { /*ici je veux inclure toutes les icones <i>*/
 
 /*header*/
 header {
+    /*max-width: 1300px; REMOVED les elemnt du header prennent la bonne place*/
     display: flex;
-    align-items: center; /* Added */
-    /*flex-direction: row;*/ /* Removed */
+    flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 #logo img {
     width: 61px;
     height: 19px;
-    padding-left: 44px;
-    padding-top: 44px;
-    padding-bottom: 44px;
+    padding-left: 3%; /*44px*/
+    padding-top: 44px;   
 }
 
 nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 50px;
-    padding-right: 40px;
+    gap: 60px; /*mieux en px qu'en %*/
+    padding-right: 5%; /*je mets en % eq. 40px*/
 }
 
 
@@ -69,23 +72,29 @@ nav a:hover { /*ligne de survol, au dessus en version desktop, en dessous en ver
     color: #0065FC;
 }
 
+
 /*section 1 : Trouvez votre hbrgmnt*/
+.start {
+    width:100%;
+}
+
 #section1 {
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
+    /*margin-left: 40px;*/
+    padding-left: 3%; /*comme le logo*/
+    padding-right: 3%; /*ADDED*/
 }
 
 /*div barrederecherche*/
-
-form { /*correspond aux éléments qui forment la barre de recherche*/
+form { /*correspond aux éléments de la barre de recherche*/
     display: flex;
     flex-direction: row;
     border: 1px solid #F2F2F2;
     border-radius: 15px;
-    margin-top: 30px; /*influence l'espace entre le p "En plein centre" et la barre de recherche*/
-    margin-bottom: 40px; /*influence l'espace entre la barre et les filtres*/
-    width: 35%; /*permet de définir la largeur de la barre de recherche. Je me suis basée sur la maquette où la fin de la barre arrive à peu près au niveau de "vac"*/
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 30%; /*fin de la barre au niveau de "va". A 35% le contour sortait après "Rechercher"*/
 }
 
 #dotlocation i { /*ici l'icone est noire*/
@@ -102,12 +111,13 @@ form { /*correspond aux éléments qui forment la barre de recherche*/
 input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
     border: none;
     font-size: 1.1em;
-    width: 230px;
+    /*color: black; pas d'impact qq soit le navigateur*/
+    min-width: 80%; /* min-w au lieu de w. % au lieu de 230px;*/
     font-weight: bold;
     padding : 20px;
     }
 
-/*correspond à "Rechercher" */
+/*correspond à "Rechercher"*/
 .buttonresearch {
     background-color:#0065FC;
     color: white;
@@ -120,11 +130,14 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     padding-right: 20px;
     }
 
-
-/*partie filtres*/
+/*partie filtres en lien avec les ul*/
 #filtres {
     display: flex;
     flex-direction: row;
+}
+
+#filtres h2 {
+    padding-top: 10px;
 }
 
 .conteneur {
@@ -136,37 +149,37 @@ input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqu
     list-style-type: none;
 }
 
- .filtre {
+.button {
     display: flex;
     flex-direction: row;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
-    padding: 10px;
-    margin: 20px;
+    padding: 15px;
+    margin-right: 20px;
     font-weight: bold;
- }
+}
 
- .filtre a {
+ #filtres a {
     text-decoration: none;
     color: black;
  }
 
- 
-.filtre a:hover {  /*les filtres doivent changer d'apparence au survol*/
+li a:hover {  /*les filtres doivent changer d'apparence au survol*/
     color: black;
     background-color: #DEEBFF;
     text-decoration: none;
     border-radius: 25px;
 }
 
-.filtre i {
+.button i {
     padding-right: 10px;
 }
 
-button {
+.button {
     background-color: white;
     font-size: 1.1em;
 }
+
 
 /*div info (i entouré + indications "plus de 500 logements dispos"*/
 #info {
@@ -189,15 +202,14 @@ button {
 #whereto {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    max-width: 100%;
-    margin-bottom: 60px;
-    margin-right: 50px;
+    /*justify-content: space-around;REMOVED*/
+    /*max-width: 1345px;*/
+    /*margin-bottom: 60px; REMOVED car pas d'effet*/
 }
 
 #accomodations, #topofthetop {
     background: #F2F2F2;
-    border-radius: 20px; /*effet sur les photos dont l'angle est modifié*/
+    border-radius: 20px; /*angles fd*/
 }
 
 .greystar i {
@@ -212,39 +224,33 @@ button {
 /*****section2*****/
 
 .one {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    width: 68%;
 }
 
 #accomodations {
-  display: flex;
-  flex-direction: column;
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: 50px;
-  margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%; /*40px;*/
+    padding-left: 3%; /*40px;*/
+    padding-right: 3%; /*40px;*/
+    margin-left: 5%; /*50px;*/
+    margin-right: 5%; /*40px;*/
 }
 
 #accomodations h1 {
-    margin-left: 25px;
+    margin-left: 2%; /*25px;*/
     margin-bottom: 30px;
 }
 
 #accomodations h2 {
-    margin-left: 20px;
-    margin-top: 18px;
-    padding: 15px;
+    margin-left: 2%; /*20px;*/
+    margin-top: 2%; /*18px;*/ 
+    margin-bottom: 6%; /*45px;*/ 
 }
 
-#accomodations a {
+#accomodations a{
     text-decoration: none;
     color: black;
-}
-
-#accomodations p {
-    margin: 10px;
 }
 
 #where { 
@@ -252,13 +258,10 @@ button {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .card1 { /*ATTENTION les cards doivent être cliquables dans leur intégralité */
-    width: 27%;
-    display: flex;
-    flex-direction: column;
+    width: 29%;
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 20px;
@@ -272,70 +275,70 @@ button {
     border-radius: 20px 20px 0px 0px;
     object-fit: cover;
     width: 100%;
-    height: 118px;
+    height: 118px; /* ici les % ne fonctionnent pas correctmt*/
 }
 
 .box1 {
     display: flex;
     flex-direction: column;
-    padding-left: 8px;
-    margin-bottom: 2px;
 }
 
 .box1 h3 {
-    margin-left: 9px;
-    margin-bottom: 3px;
-    margin-top: 10px;
-
+    margin-left: 4%; /*8px;*/
+    margin-bottom: 1%; /*3px;*/
+    margin-top: 5%; /*10px;*/
 }
 
 .box1 p {
-    margin-top: 2px;
+    margin-top: 1%; /*2px;*/
 }
 
 .stars {
     font-size: 0.8em;
-    margin-left: 8px;
+    margin-left: 4%; /*8px;*/
 }
 
 
 /*****article topofthetop*****/
 
 .two {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    width: 28%;
 }
 
-#topofthetop {
-    /*max-width: 410px;*/
+#topofthetop { 
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 #increase {
     display: flex;
     flex-direction: row;
-    padding-top : 40px;
-    gap: 18%;
+    padding-top : 6%; /*40px;*/
+    gap: 30%;
 }
 
 #increase h1 {
-    margin-left: 35px;
+    margin-left: 8%; /*35px;*/
 }
 
 #increase i {
-    padding-top: 9px;
+    padding-top: 5%;
 }
 
 #bests {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+    flex-direction: column; 
+    margin-bottom: 3px; 
+    gap: 14px;
+    align-items: center;
 }
 
-.card2 { /*ATTENTION les cards doivent être cliquables*/
-    width: 80%;
+.card2 {
+    width: 80%; 
+}
+
+.card2 a { /*ATTENTION les cards doivent être cliquables*/
     display: flex;
     flex-direction: row;
     border: 5px solid #FFFFFF;
@@ -343,21 +346,20 @@ button {
     box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     border-radius: 20px;
-    margin: 35px;
-    margin-bottom: 38px;
+    margin-bottom: 8%;  
 }
 
-.bests a {
+#bests a {
     text-decoration: none;
     color: black;
 }
 
-.comment h3 {
+.box2 h3 {
     margin-left: 6px; 
     margin-bottom: 2px;
 }
 
-.comment p {
+.box2 p {
     margin-left: 7px;
 }
 
@@ -371,37 +373,40 @@ button {
 .box2 {
     display: flex;
     flex-direction: column;
-    margin-left:15px;
-    margin-top: 4px;
+    margin-left: 3%; /*15px;*/
 }
 
 .stars2 {
     font-size: 0.8em;
-    padding-bottom: 5px;
-    margin-top: auto; /*permet aux etoiles de prendre l'espace max et donc de se mettre tout en bas*/
+    padding-bottom: 3%; /*5px;*/
+    margin-top: auto; /*permet aux toiles de prendre l'espace max et donc de se mettre tout en bas*/
 }
 
 /*****section 3 activities*****/
+.trois {
+    width: 100%;
+}
+
 #section3 {
     display: flex;
     flex-direction: column;
-    max-width: 1400px;
 }
 
 #section3 h1 {
-    padding-bottom: 20px;
-    margin-left: 60px;
-   
+    padding-top: 4%;
+    padding-bottom: 1%; /*20px;*/
+    padding-left: 4%; /*60px;*/ 
 }
 
 #activities {
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    margin-left: 50px;
+    gap: 4%; 
+    padding-left: 4%;
+    padding-right: 4%;
     }
 
-.card3 { /*ATTENTION les cards doivent être cliquables*/
+.card3 { /*les cards doivent être cliquables*/
     display: flex;
     flex-direction: column;
     width: 22%;
@@ -414,7 +419,6 @@ button {
     width: 100%;
     height: 350px;
     border-radius: 20px 20px 0 0;
-    
 }
 
 #activities a {
@@ -422,28 +426,27 @@ button {
     color: black;
 }
 
-
 .card3 h3 {
     font-size: 0.9em;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 5%; /*10px;*/
+    margin-left: 5%; /*20px;*/
 }
 
 
 /*footer*/
-#footer { /*revoir margin et padding*/
-    max-width: 1300px;
+.end {
+    width: 100%;
+}
+
+#footer { 
     display: flex;
     flex-direction: row;
     background-color: #F2F2F2;
     padding-top: 40px;
     gap: 15%;
-    margin-top: 60px;
-    margin-left: 50px;
-    margin-right: 40px;
-    margin-bottom: 0;
-    
-   
+    margin-top: 5%; /*60px;*/
+    margin-left: 4%;/*50px;*/
+    margin-right: 4%; /*40px;*/
 }
 
 .help {
@@ -456,7 +459,7 @@ button {
     margin-bottom: 5px;  
 }
 
-footer ul {
+ul {
     list-style-type: none;
     font-size: 0.9em;
 }
@@ -474,109 +477,112 @@ li {
 
 
 
-/*********************************************MEDIA QUERIES TABLETTE****************************************/
+/*********************************************    MEDIA QUERIES TABLETTE     ****************************************/
 
 /*media queries en lien avec la version tablette (769 à 992px selon l'ancienne version de booki)*/
-
 @media screen and (min-width: 769px) and (max-width: 992px){
-    header {
-        align-items: center;
+/*header*/
+    .start {
         width: 100%;
     }
 
-    #section1 {
-        align-items: center;
-        width: 100%;
-        margin: auto;
-    }
+/*partie filtres en lien avec les ul*/
+    .conteneur {
+        flex-wrap: wrap; /* resoud le pb de button sur 2lignes*/
+}
 
+/*whereto = section+aside. Mis au dessus de l'autre en version tablette*/
     #whereto {
+        display: flex;
         flex-direction: column;
-        gap:50px;
+        gap: 50px; /*ici les % ne fonctionne pas bien du tout*/
     }
 
+/*section Hbergement à Marseille*/
     .one {
-        flex-direction: column;
         width: 100%;
-        align-items: center;
     }
 
+/*Aside Les + populaires*/
     .two {
-        flex-direction: column;
         width: 100%;
-        align-items: center;
     }
 
-    #accomodations {
-        width: 80%;
-        max-width: 900px;
-        min-width: 650px; 
-    }
-    
-    #topofthetop {
-        width: 90%;
-        max-width: 900px;
-        min-width: 792px; 
-        margin: auto;
-        /*margin-left: 50px;*/
-      }
-    
-    #increase {
-        display: flex;
-        flex-direction: row;
-        padding-top : 40px;
-        gap: 60%;
-    }
+   #topofthetop {
+    padding-left: 3%;
+    padding-right: 3%; /*40px;*/
+    margin-left: 5%; /*50px;*/
+    margin-right: 5%; /*40px;*/
+   }
 
-    .bests {
+
+/*aside topofthetop*/
+    #bests {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; 
+        margin-bottom: 3%; 
+        gap: 20px;
     }
 
     .card2 {
-        width: 90%;
-        height: 145px;
-        max-width: 250px;
-        min-width: 150px;
+    width: 100%; 
     }
 
-    #activities {
-    margin: 50px auto;
-    width: 100%;
-    max-width: 900px;
-    min-width: 650px;
+    .card2 a { /*ATTENTION les cards doivent être cliquables*/
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 8%;  
     }
 
-    #activities h1 {
-    margin-left: 30px;
-    margin-top: 55px;
+    .card2 img { 
+        width: 38%;
+        height: 150px;
     }
 
-    #section3 h1 {
-    margin: 0;
+    #increase {
+        gap: 69%;
+        padding-top: 3%;
+        
     }
 
-    #footer {
-    width: 100%;
-    max-width: 900px;
-    min-width: 650px;
+    #increase h1 {
+        margin-left: 1%;
     }
+
+    #increase i {
+        padding-top: 4%;
+    }
+
+
+/*Section Activités à Marseille*/
+    .three {
+        width: 100%;
+    }
+
+    #activities img {
+        width: 100%;
+        height: 267px;
+    }
+
+/*Footer*/
+    .end {
+        width: 100%;  
+    }
+    
 }
 
 
 
-
-
-/************************************************  MEDIA QUERIES MOBILE  **************************************/
+/***********************************  MEDIA QUERIES MOBILE  *************************/
 
 /*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
 
     /**************** HEADER *********/
-@media screen and (max-width: 768px) { 
+@media screen  and (max-width: 768px) { 
     header {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
     /****** LOGO *****/
@@ -588,31 +594,40 @@ li {
     nav {
         display: flex;
         flex-direction: row;
+        align-items: center;
+        padding-right: 0;
+        gap: 25%;
     }
     
-    nav a {
+    /* SOULIGNAGE DU NAV */
+    .hebergements:hover { /* il est en DESSOUS en version mobile*/
+        color: #0065FC;
+        border-top: none;
+        border-bottom: 3px solid #0065FC;
         padding-bottom: 20px;
+        padding-left: 100%;
     }
 
-    /* SOULIGNAGE DU NAV */
-    nav a:hover { /* il est en DESSOUS en version mobile*/
-    color: #0065FC;
-    border-top: none;
-    border-bottom: 2px solid #0065FC;
+    .activities:hover {
+        color: #0065FC;
+        border-top: none;
+        border-bottom: 3px solid #0065FC;
+        padding-bottom: 20px;
+        padding-right: 90%; 
     }
 
     /****** SECTION1 ET BARRE DE RECHERCHE  ****************/
-    #section1 {
-        margin: auto;
+    #section1 h1 {
+        /*margin: auto;REMOVED*/
         align-items: center;
-        width: 100%;
         }
+
 
     form { /*Eléments qui forment la barre de recherche dans la version mobile*/
         display: flex;
         flex-direction: row;
         margin-bottom: 20px;
-        align-items: center;
+        /*align-items: center; REMOVED*/
         }
 
     #dotlocation { /*contour de l'icone dotlocation*/
@@ -622,7 +637,7 @@ li {
     input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
         border: none;
         font-size: 1.1em;
-        /*width: 180px;*/
+        width: 180px;
         font-weight: bold;
         padding : 15px;
         }
@@ -657,22 +672,18 @@ li {
     }
 
     .filtre {
-        display: flex;
+        font-size: 0.8em;
         flex-direction: row;
-        font-size: 0.7em;
-        align-items: center;
+        min-width: 150px;
     }
 
     .filtre a {
-        width: 80%;
-        margin: 0;
+        width: %;
+        margin: ;
     }
 
-    .conteneur { /*DIV qui réuni l'ensemble des filtres et qui va pouvoir être agencée grace à CSS GRIDS*/
-        display: grid;
-        grid-template-columns: 10em 10em;
-        grid-template-rows: 50px 50px;
-        margin-bottom: 15px;
+    .conteneur { /*gestion des filtres*/
+        flex-wrap: wrap;
     }
 
     #info {
@@ -684,7 +695,6 @@ li {
     #whereto {
         display: flex;
         flex-direction: column;
-        min-width: 300px;
     }
 
      /************************ARTICLE QUI PASSE AVANT LA SECTION2**************************/
@@ -704,15 +714,9 @@ li {
      #topofthetop {
         border-radius: 0;
         margin: 0 auto;
-        /*max-width: 375px;*/
-        /*min-width: 300px;*/
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         }
 
-    .card2 img { 
-        object-fit: cover;
-        width: 30%;
-    }
 
     #increase h1 {
         margin-left: 15px;
@@ -720,33 +724,28 @@ li {
     }
 
     #increase {
-        gap: 22%;
+        gap: 48%;
+        padding: 0;
     }
 
     /************************SECTION2 ACCOMODATIONS*****************************/
     #where { 
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 0;
-    }
+        align-items: center;
+        /*justify-content: center; REMOVED*/
+        /*margin: auto;REMOVED*/
+        }
 
     #accomodations {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 375px;
-    min-width: 320px;
-    background: white;
-    margin: 0 auto;
-    padding: 0;
-    justify-content: center;
+        background: white;
+        margin: 0 auto;
+        padding: 0;
     }
 
     #accomodations h1 {
         margin-top: 35px;
-        margin-left: 0;
+        margin-left: 3%;
     }
 
     #accomodations h2 {
@@ -754,15 +753,19 @@ li {
     }
 
     .card1 { 
-        width: 97%;
-        height: 199px;
-    }
-
-    .card1 img { 
-        object-fit: cover;
-        width: 100%;
+        width: 80%;
+        padding-bottom: 25px;/*a revoir en %*/
     }
     
+    .box1 h3{
+      margin-left: 10px; 
+      margin-bottom: 0;
+    }
+
+    .stars {
+        margin-top: auto;
+        margin-left: 10px;
+    }
 
     /*****************************SECTION3 ACTIVITIES******************************/
     #section3 {
@@ -772,37 +775,34 @@ li {
     #activities {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-left: 0;
     margin: 0 auto;
     max-width: 500px;
     min-width: 320px;
     gap: 15px;
     margin-bottom: 65px;
-    align-items: center;
+    
     }
     
     #section3 h1 {
         width: 110px;
-        margin-right: 250px;
+        margin-right: 60%;
     }
     
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
-    width: 97%;
+    width: 100%;
     padding-bottom: 20px;
     }
 
     .card3 img {
     width: 100%;
-    
-    max-width: 320px;
-    max-height: 124px;
+    min-height: 124px;
     }
 
     /*footer*/  
-    #footer { /*revoir margin et padding*/
-    width: 100%;
-    min-width: 300px;
+    #footer { 
     display: flex;
     flex-direction: column;  
     margin: 0;
