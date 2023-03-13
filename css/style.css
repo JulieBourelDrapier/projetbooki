@@ -578,25 +578,28 @@ li {
 /*media queries en lien avec la version mobile (768 px et moins selon la nouvelle version de booki)*/
 
     /**************** HEADER *********/
-@media screen  and (max-width: 768px) { 
-    header {
+@media screen and (min-width: 320px) and (max-width: 768px) { 
+    #logo {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 10px;
     }
 
     /****** LOGO *****/
     #logo img {
         padding-left: 0;
+        align-items: center;
     }
 
     /****** NAV *******/
-    nav {
+    nav a {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding-right: 0;
-        gap: 25%;
+        border-bottom: 3px solid #F2F2F2;
+        padding-bottom: 20px;
     }
     
     /* SOULIGNAGE DU NAV */
@@ -605,33 +608,43 @@ li {
         border-top: none;
         border-bottom: 3px solid #0065FC;
         padding-bottom: 20px;
-        padding-left: 100%;
+        padding-left: 70px;
     }
 
     .activities:hover {
+
         color: #0065FC;
         border-top: none;
         border-bottom: 3px solid #0065FC;
         padding-bottom: 20px;
-        padding-right: 90%; 
+        padding-right: 70px;
     }
 
     /****** SECTION1 ET BARRE DE RECHERCHE  ****************/
+  
+    .start {
+        width: 100%;
+        align-items: center;
+    }
+    
     #section1 h1 {
-        /*margin: auto;REMOVED*/
+        padding-bottom: 0;
         align-items: center;
         }
+    
+    #section1 p{
+        margin: 0;
 
+    }
 
     form { /*Eléments qui forment la barre de recherche dans la version mobile*/
         display: flex;
         flex-direction: row;
         margin-bottom: 20px;
-        /*align-items: center; REMOVED*/
         }
 
     #dotlocation { /*contour de l'icone dotlocation*/
-        padding: 15px;
+        padding: 20px;
     }
     
     input { /*correspond à l'endroit ou on peut écrire une ville et où est indiqué "Marseille, Fr"*/
@@ -639,21 +652,14 @@ li {
         font-size: 1.1em;
         width: 180px;
         font-weight: bold;
-        padding : 15px;
-        }
-
-    form { /*correspond aux éléments qui forment la barre de recherche dans la version mobile*/
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
-        align-items: center;
+        padding : 20px;
     }
 
     .buttonresearch i { /*icone loupe (couleur blanche, fond bleu, radius différent sur mobile ainsi que padding)*/
         color: white;
         background-color: #0065FC;
         border-radius: 0 15px 15px 0;
-        padding: 16px;
+        padding: 20px;
     }
     
     /*icone LOUPE à la place de "Recherche" + changement de place topofthetop et accomodations (ordre inversé one/two)*/
@@ -675,6 +681,12 @@ li {
         font-size: 0.8em;
         flex-direction: row;
         min-width: 150px;
+    }
+
+    #filtres li{
+        width: 190px;
+        flex-wrap:wrap;
+        font-size: 0.8em;
     }
 
     .filtre a {
