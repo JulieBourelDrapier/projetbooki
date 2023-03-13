@@ -773,16 +773,15 @@ li {
     }
 
     #activities {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    margin: 0 auto;
-    max-width: 500px;
-    min-width: 320px;
-    gap: 15px;
-    margin-bottom: 65px;
-    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin: 0 auto;
+        max-width: 500px;
+        min-width: 320px;
+        gap: 15px;
+        margin-bottom: 65px;
     }
     
     #section3 h1 {
@@ -792,21 +791,21 @@ li {
     
 
     .card3 { /*ATTENTION les cards doivent être cliquables*/
-    width: 100%;
-    padding-bottom: 20px;
+        width: 100%;
+        padding-bottom: 20px;
     }
 
     .card3 img {
-    width: 100%;
-    min-height: 124px;
+        width: 335px;
+        height: 190px;
     }
 
     /*footer*/  
     #footer { 
-    display: flex;
-    flex-direction: column;  
-    margin: 0;
-    padding-left: 0;
+        display: flex;
+        flex-direction: column;  
+        margin: 0;
+        padding-left: 0;
     }
 
 
